@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FoxArch</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com/3.0.24"></script>
+    <script src="https://kit.fontawesome.com/7772804d9d.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="components/carousel.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'foxarch': '#ff3333',
+                        'foxarch-darker': '#dd3333'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body id="body">
+<div class="loading">
+    <div>
+        <img src="images/react-logo.gif" alt="Spinning react logo">
+        <h1>Loading react.js components</h1>
+        <div class="progressbar">
+            <div class="progressbar-handle"></div>
+        </div>
+    </div>
+</div>
+<div id="navigation"></div>
+
+<button id="ConfigButton" onclick="new ConfigMenu()" class="bg-foxarch rounded-full">
+    <span class="fas fa-cog"></span>
+</button>
+
+<div id="configDrop" class="rounded-3xl">
+    <div class="rounded-t-3xl"></div>
+</div>
+<div style="padding-top: 65px;"></div>
+<div class="promo w-screen">
+    <img id="promo-bg" src="images/background.png" alt="Background">
+    <div class="promo-text">
+        <span id="promo-title">FoxArch is </span>
+        <span class="blink-text"></span><div class="cursor"></div>
+        <p>linux distribution</p>
+    </div>
+</div>
+
+<div id="carousel1"></div>
+
+<script src="components/Navigation.js" type="text/babel"></script>
+<script src="components/Carousel.js" type="text/babel"></script>
+</body>
+
+<script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+<script src="js/index.js"></script>
+<script src="js/scroll.js"></script>
+</html>
+

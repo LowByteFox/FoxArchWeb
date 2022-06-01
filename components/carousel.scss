@@ -1,0 +1,26 @@
+.carousel {
+  display: grid;
+  grid-template-rows: 4fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  .carousel-card {
+    grid-column: 2;
+    grid-row: 1;
+    text-align: center;
+  }
+
+  .carousel-arrows {
+    grid-row: 2;
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: repeat(50%, 2);
+
+    .carousel-arrow-l {
+      grid-column: 1;
+    }
+
+    .carousel-arrow-r {
+      grid-column: 2;
+    }
+  }
+}

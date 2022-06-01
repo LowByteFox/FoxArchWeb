@@ -1,0 +1,211 @@
+@import url("https://use.typekit.net/kac0vmf.css");
+* {
+  font-family: lato, sans-serif;
+}
+
+body {
+  font-family: lato, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  width: 100vw;
+  height: 200vw;
+}
+
+nav {
+  position: fixed;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: 4fr 2fr 1fr auto;
+  width: 100vw;
+  height: 65px;
+}
+nav img {
+  height: 50px;
+  padding-left: 15px;
+  margin-top: 7.5px;
+  cursor: pointer;
+}
+nav p {
+  color: white;
+  font-size: 150%;
+  text-align: center;
+  padding-left: 9px;
+  margin-top: 14px;
+  padding-right: 9px;
+  height: 55%;
+  cursor: pointer;
+}
+nav p:nth-child(4) {
+  margin-right: 15px;
+}
+nav button {
+  color: white;
+  font-size: 200%;
+  grid-column: 4;
+  margin-right: 15px;
+}
+nav button span {
+  padding: 7.5px;
+}
+nav div {
+  grid-column: 3;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+}
+@media (max-width: 500px) {
+  nav div p {
+    display: none;
+  }
+  nav div button#DropdownButton {
+    display: block;
+  }
+}
+@media (min-width: 500px) {
+  nav button#DropdownButton {
+    display: none;
+  }
+}
+
+#drop {
+  position: fixed;
+  top: 70px;
+  left: 5%;
+  margin-top: 15px;
+  margin-right: 15px;
+  width: 90%;
+  text-align: center;
+  z-index: 100;
+}
+#drop p {
+  text-align: right;
+  padding-bottom: 7.5px;
+  padding-right: 9px;
+  margin: 15px 7.5px 15px 15px;
+  cursor: pointer;
+}
+#drop h1 {
+  font-size: 150%;
+}
+
+.break-float {
+  clear: both;
+}
+
+.promo img {
+  width: 100%;
+}
+.promo .promo-text {
+  padding-top: 15%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  width: 100%;
+  font-size: 4vw;
+  top: 65px;
+  left: 0;
+  padding-left: 25px;
+  color: white;
+}
+.promo .blink-text {
+  color: #ff3333;
+}
+
+.cursor {
+  position: relative;
+  top: 1.5%;
+  display: inline-block;
+  width: 7px;
+  height: 64px;
+  background-color: #ff3333;
+  animation: blinking 0.75s infinite;
+}
+
+@keyframes blinking {
+  from, to {
+    background-color: transparent;
+  }
+  50% {
+    background-color: #ff3333;
+  }
+}
+#ConfigButton {
+  font-size: 200%;
+  color: white;
+  position: fixed;
+  z-index: 10;
+  padding-left: 8px;
+  padding-right: 8px;
+  right: 5vw;
+  bottom: 5vw;
+}
+
+#configDrop {
+  display: none;
+  background-color: white;
+  position: fixed;
+  z-index: 8;
+  right: 5vw;
+  bottom: 5vw;
+  height: 96px;
+  width: 48px;
+}
+
+#configDrop > div {
+  background-color: transparent;
+  position: fixed;
+  z-index: 8;
+  right: 5vw;
+  bottom: 4vw;
+  height: 48px;
+  width: 48px;
+}
+
+#carousel1 {
+  width: 50vw;
+  margin: 50px auto 50px;
+}
+
+.loading {
+  background-color: #262624;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+}
+.loading h1 {
+  font-size: 250%;
+  color: #6EDEF4;
+}
+@media (max-width: 500px) {
+  .loading h1 {
+    font-size: 150%;
+  }
+}
+.loading div > img {
+  margin: auto;
+}
+.loading .progressbar {
+  width: 100%;
+  height: 10%;
+  border: #6EDEF4 4px solid;
+  border-radius: 15px;
+}
+.loading .progressbar-handle {
+  height: 100%;
+  background-color: #6EDEF4;
+  animation-name: filling;
+  animation-duration: 3.7s;
+}
+
+@keyframes filling {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */
