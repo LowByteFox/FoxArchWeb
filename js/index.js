@@ -39,6 +39,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 var _this = this;
 var words = ["beginner friendly", "minimal", "powerful", "customizable"];
 var wait = true;
+var logic = 0;
 function delay(time) {
     // @ts-ignore
     return new Promise(function (resolve) { return setTimeout(resolve, time); });
@@ -130,7 +131,16 @@ function ConfigMenu() {
                     configButton = $("#ConfigButton > span").addClass("animate-spin");
                     if (!(configButton !== null)) return [3 /*break*/, 2];
                     configButton.addClass("animate-spin");
-                    $("#configDrop").show('slide', { direction: 'down' });
+                    switch (logic) {
+                        case 0:
+                            $("#configDrop").show('slide', { direction: 'down' });
+                            logic = 1;
+                            break;
+                        case 1:
+                            $("#configDrop").hide('slide', { direction: 'down' });
+                            logic = 0;
+                            break;
+                    }
                     return [4 /*yield*/, delay(500)];
                 case 1:
                     _a.sent();

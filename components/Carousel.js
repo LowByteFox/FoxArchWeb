@@ -49,11 +49,13 @@ class Carousel extends React.Component {
     render() {
         return (
             <div className="carousel rounded-md border-gray-500 border-2">
-                {this.state.cards[0]}
-                <div className="carousel-arrows">
+                <span>
                     <button className="carousel-arrow-l" onClick={this.lastCard}>&lt;</button>
+                </span>
+                {this.state.cards[0]}
+                <span>
                     <button className="carousel-arrow-r" onClick={this.nextCard}>&gt;</button>
-                </div>
+                </span>
             </div>
         );
     }

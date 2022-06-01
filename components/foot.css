@@ -1,0 +1,34 @@
+.foot {
+  position: sticky;
+  bottom: 0;
+  background-color: #2E3440;
+  display: grid;
+  grid-template-columns: 50vw auto;
+  margin: 0;
+  text-align: center;
+  color: #E9ECEF;
+}
+
+.f-left {
+  display: grid;
+  align-content: center;
+}
+
+.foot button {
+  color: #F8F9FA;
+  background-image: none;
+  background-color: #212529;
+  border-radius: 50%;
+  border: none;
+  font-size: 250%;
+  padding-left: 9px;
+  padding-right: 9px;
+  margin: 0 8px 8px;
+  cursor: pointer;
+}
+
+.copyright {
+  padding-bottom: 8px;
+}
+
+/*# sourceMappingURL=foot.css.map */

@@ -4,6 +4,7 @@
 const words = ["beginner friendly", "minimal", "powerful", "customizable"]
 
 let wait = true;
+let logic = 0;
 
 function delay(time) {
     // @ts-ignore
@@ -70,7 +71,16 @@ async function ConfigMenu() {
     let configButton = $("#ConfigButton > span").addClass("animate-spin");
     if (configButton !== null) {
         configButton.addClass("animate-spin")
-        $("#configDrop").show('slide', {direction: 'down'})
+        switch (logic) {
+            case 0:
+                $("#configDrop").show('slide', {direction: 'down'})
+                logic = 1;
+                break;
+            case 1:
+                $("#configDrop").hide('slide', {direction: 'down'})
+                logic = 0;
+                break;
+        }
         await delay(500)
         configButton.removeClass("animate-spin")
     }
