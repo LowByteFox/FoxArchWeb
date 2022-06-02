@@ -8,7 +8,7 @@ body {
   font-weight: 400;
   font-style: normal;
   width: 100vw;
-  height: 200vw;
+  overflow-x: hidden;
 }
 
 nav {
@@ -201,6 +201,14 @@ nav div {
   to {
     width: 100%;
   }
+}
+#carousel1 .carousel {
+  width: 100%;
+  grid-template-columns: 25% 50% 25%;
+}
+
+.topbtn {
+  font-size: 300%;
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -56,6 +56,9 @@ $(window).ready(async () => {
     disableScroll();
     $(".promo-text").css("height", `${$("#promo-bg").height()}px`)
     $(".cursor").css("height", $("#promo-title").css("font-size"));
+    $(".toTopBtn").click(() => {
+        toTop()
+    })
     await delay(4000);
     // @ts-ignore
     enableScroll();
@@ -84,4 +87,8 @@ async function ConfigMenu() {
         await delay(500)
         configButton.removeClass("animate-spin")
     }
+}
+
+function toTop() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
 }

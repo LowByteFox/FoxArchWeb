@@ -2,6 +2,11 @@
   display: inline-grid;
   grid-template-columns: 1fr auto 1fr;
 }
+.carousel span {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+}
 .carousel .carousel-card {
   grid-column: 2;
   text-align: center;
@@ -9,19 +14,34 @@
 .carousel .carousel-arrow-l {
   grid-column: 1;
   text-align: right;
-  font-size: 500%;
+  font-size: 150%;
+  padding: 15px;
 }
 .carousel .carousel-arrow-r {
   grid-column: 2;
-  font-size: 500%;
+  font-size: 150%;
+  padding: 15px;
 }
 
 .carousel-card {
   display: grid;
   grid-template-columns: repeat(2, auto);
+  align-content: center;
+  justify-content: center;
 }
 .carousel-card p:nth-child(1) {
-  font-size: 500%;
+  font-size: 4.5vw;
+  padding: 15px;
+}
+.carousel-card p:nth-child(2) {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  padding: 15px;
+}
+
+.carousel-card-text {
+  font-size: 3vw;
 }
 
 /*# sourceMappingURL=carousel.css.map */

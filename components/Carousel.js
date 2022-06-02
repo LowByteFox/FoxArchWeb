@@ -27,34 +27,40 @@ class Carousel extends React.Component {
 
     nextCard = async () => {
         let tempArray = this.state.cards;
-        $(`#${tempArray[0].props.idInfo}`).hide('slide', {direction: 'right'})
+        // $(`#${tempArray[0].props.idInfo}`).hide('slide', {direction: 'right'})
+        $(`#${tempArray[0].props.idInfo}`).hide()
 
         const leftOver = tempArray.shift();
         tempArray.push(leftOver);
 
         await this.setState({cards: tempArray});
-        $(`#${this.state.cards[0].props.idInfo}`).show('slide', {direction: 'left'})
+        // $(`#${this.state.cards[0].props.idInfo}`).show('slide', {direction: 'left'})
+        $(`#${this.state.cards[0].props.idInfo}`).fadeIn()
     }
 
     lastCard = async () => {
         let tempArray = this.state.cards;
-        $(`#${tempArray[0].props.idInfo}`).hide('slide', {direction: 'left'})
+        $(`#${tempArray[0].props.idInfo}`).hide()
         const leftOver = tempArray.pop();
         tempArray.unshift(leftOver);
 
         await this.setState({cards: tempArray});
-        $(`#${this.state.cards[0].props.idInfo}`).show('slide', {direction: 'right'})
+        $(`#${this.state.cards[0].props.idInfo}`).fadeIn()
     }
 
     render() {
         return (
-            <div className="carousel rounded-md border-gray-500 border-2">
-                <span>
-                    <button className="carousel-arrow-l" onClick={this.lastCard}>&lt;</button>
+            <div className="carousel bg-neutral-100">
+                <span className={""}>
+                    <button className="carousel-arrow-l" onClick={this.lastCard}>
+                        <span className="fas fa-arrow-left"></span>
+                    </button>
                 </span>
                 {this.state.cards[0]}
-                <span>
-                    <button className="carousel-arrow-r" onClick={this.nextCard}>&gt;</button>
+                <span className={""}>
+                    <button className="carousel-arrow-r" onClick={this.nextCard} >
+                        <span className="fas fa-arrow-right"></span>
+                    </button>
                 </span>
             </div>
         );
@@ -65,8 +71,9 @@ function Carousel1() {
     return (
         <div>
             <Carousel>
-                <Card idInfo={self.crypto.randomUUID()} iconClass="fas fa-cog" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam venenatis dolor at metus maximus feugiat. Morbi et posuere nisi. Maecenas et tellus at lorem ultrices aliquet. Sed sollicitudin leo non ligula lobortis imperdiet. Aenean eget justo sagittis, ultricies nunc vitae, tincidunt ipsum. Donec lacus ipsum, viverra in metus vitae, finibus feugiat felis. Aliquam vehicula eget lectus id pellentesque. Pellentesque nec sodales orci, in faucibus mi. Donec eu vehicula massa, et cursus nisi. Vivamus metus dui, semper pulvinar nulla at, congue viverra nulla. Sed interdum placerat elit, nec commodo turpis convallis sed. Etiam volutpat mollis quam, in bibendum ante finibus eget. Sed sit amet placerat ipsum. Donec ac neque imperdiet, tincidunt nunc at, rutrum felis. "></Card>
-                <Card idInfo={self.crypto.randomUUID()} iconClass="fas fa-bars" text="In suscipit volutpat tellus, et vestibulum nunc volutpat in. Nullam condimentum rutrum sem, vitae posuere nunc cursus nec. Suspendisse at efficitur felis, id posuere libero. Aenean nisi mauris, posuere nec libero vel, vestibulum finibus quam. Nam laoreet at neque feugiat faucibus. In nisi est, tincidunt id volutpat in, ultricies non nibh. Integer tincidunt ex eget turpis finibus fringilla. Donec accumsan convallis ex ac commodo. Sed iaculis, risus sed rhoncus hendrerit, magna metus congue tellus, a vulputate nunc odio at turpis. Nullam rutrum eleifend mi, ac aliquam tortor accumsan eget. Morbi euismod mauris nec mauris euismod ultrices. Aliquam in ex placerat, pulvinar lacus vitae, consectetur purus. Sed nec velit sed dui ornare mattis. Sed sit amet nisl  . "></Card>
+                <Card idInfo={self.crypto.randomUUID()} iconClass="fas fa-feather" text="Minimal by look"></Card>
+                <Card idInfo={self.crypto.randomUUID()} iconClass="fas fa-bolt" text="Powerful by feel"></Card>
+                <Card idInfo={self.crypto.randomUUID()} iconClass="fas fa-palette" text="Customizable by enthusiasm"></Card>
             </Carousel>
         </div>
     )

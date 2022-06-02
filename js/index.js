@@ -108,6 +108,9 @@ $(window).ready(function () { return __awaiter(_this, void 0, void 0, function (
                 disableScroll();
                 $(".promo-text").css("height", "".concat($("#promo-bg").height(), "px"));
                 $(".cursor").css("height", $("#promo-title").css("font-size"));
+                $(".toTopBtn").click(function () {
+                    toTop();
+                });
                 return [4 /*yield*/, delay(4000)];
             case 1:
                 _a.sent();
@@ -150,4 +153,7 @@ function ConfigMenu() {
             }
         });
     });
+}
+function toTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
