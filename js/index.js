@@ -37,7 +37,8 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 var _this = this;
-var words = ["beginner friendly", "minimal", "powerful", "customizable"];
+var words = ["začiatočnícky priateľská", "minimálna", "výkonná", "nastaviteľná"];
+var NavIDS = [["InfoBTN", "ReasonBTN", "WikiBTN", "StackBTN"], ["DInfoBTN", "DReasonBTN", "DWikiBTN", "DStackBTN"]];
 var wait = true;
 var logic = 0;
 function delay(time) {
@@ -117,6 +118,16 @@ $(window).ready(function () { return __awaiter(_this, void 0, void 0, function (
                 // @ts-ignore
                 enableScroll();
                 $(".loading").fadeOut();
+                $("#".concat(NavIDS[0][0])).click(function () {
+                    $([document.documentElement, document.body]).animate({
+                        scrollTop: $("#info").offset().top - 15
+                    }, 2000);
+                });
+                $("#".concat(NavIDS[1][0])).click(function () {
+                    $([document.documentElement, document.body]).animate({
+                        scrollTop: $("#info").offset().top - 55
+                    }, 2000);
+                });
                 return [2 /*return*/];
         }
     });
@@ -155,5 +166,7 @@ function ConfigMenu() {
     });
 }
 function toTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    $([document.documentElement, document.body]).animate({
+        scrollTop: 0
+    }, 2000);
 }

@@ -9,10 +9,6 @@ class Foot extends React.Component {
         console.log("%c'Redirecting'", "color: red;font-size: 250%;")
     }
 
-    toTop = () => {
-        window.scrollTo({top: 0, behavior: 'smooth'});
-    }
-
     render() {
         return <div className={"foot"}>
             <div className={"f-left"}>
@@ -20,7 +16,7 @@ class Foot extends React.Component {
                 <p className={"copyright"}>&copy; Copyright | FireTheFox</p>
             </div>
             <div>
-                <h2 style={{margin: "16px"}}>Follow us</h2>
+                <h2 style={{margin: "16px"}}>Pozri aj</h2>
                 <div>
                     <button onClick={this.redirect} title={"Github"}>
                         <span className={"fa fa-github"}></span>
@@ -32,7 +28,7 @@ class Foot extends React.Component {
                         <span className={"fa fa-instagram"}></span>
                     </button>
 
-                    <button onClick={this.toTop} title={"Back to top"}>
+                    <button onClick={toTop} title={"Back to top"}>
                         <span className={"fa fa-arrow-circle-up"}></span>
                     </button>
                 </div>

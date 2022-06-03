@@ -71,9 +71,10 @@ function Carousel1() {
     return (
         <div>
             <Carousel>
-                <Card idInfo={self.crypto.randomUUID()} iconClass="fas fa-feather" text="Minimal by look"></Card>
-                <Card idInfo={self.crypto.randomUUID()} iconClass="fas fa-bolt" text="Powerful by feel"></Card>
-                <Card idInfo={self.crypto.randomUUID()} iconClass="fas fa-palette" text="Customizable by enthusiasm"></Card>
+                <Card idInfo={self.crypto.randomUUID()} iconClass="fas fa-feather" text="Minimálna pohľadom"></Card>
+                <Card idInfo={self.crypto.randomUUID()} iconClass="fas fa-bolt" text="Výkonná pocitom"></Card>
+                <Card idInfo={self.crypto.randomUUID()} iconClass="fas fa-palette" text="Nastaviteľná entuziazmom"></Card>
+                <Card idInfo={self.crypto.randomUUID()} iconClass="fab fa-linux" text="Založená na Arch Linuxe"></Card>
             </Carousel>
         </div>
     )

@@ -1,7 +1,8 @@
 /// <reference path="jquery/index.d.ts" />
 /// <reference path="jqueryui/index.d.ts" />
 
-const words = ["beginner friendly", "minimal", "powerful", "customizable"]
+const words = ["začiatočnícky priateľská", "minimálna", "výkonná", "nastaviteľná"]
+const NavIDS = [["InfoBTN", "ReasonBTN", "WikiBTN", "StackBTN"], ["DInfoBTN", "DReasonBTN", "DWikiBTN", "DStackBTN"]]
 
 let wait = true;
 let logic = 0;
@@ -52,6 +53,7 @@ function DropMenu() {
 
 // @ts-ignore
 $(window).ready(async () => {
+
     // @ts-ignore
     disableScroll();
     $(".promo-text").css("height", `${$("#promo-bg").height()}px`)
@@ -63,11 +65,24 @@ $(window).ready(async () => {
     // @ts-ignore
     enableScroll();
     $(".loading").fadeOut()
+
+    $(`#${NavIDS[0][0]}`).click(function() {
+        $([document.documentElement, document.body]).animate({
+            scrollTop: $("#info").offset().top - 15
+        }, 2000);
+    });
+
+    $(`#${NavIDS[1][0]}`).click(function() {
+        $([document.documentElement, document.body]).animate({
+            scrollTop: $("#info").offset().top - 55
+        }, 2000);
+    });
 })
 
 $(window).resize(function() {
     $(".promo-text").css("height", `${$("#promo-bg").height()}px`)
     $(".cursor").css("height", $("#promo-title").css("font-size"));
+
 })
 
 async function ConfigMenu() {
@@ -90,5 +105,7 @@ async function ConfigMenu() {
 }
 
 function toTop() {
-    window.scrollTo({top: 0, behavior: 'smooth'});
+    $([document.documentElement, document.body]).animate({
+        scrollTop: 0
+    }, 2000);
 }
