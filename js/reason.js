@@ -37,111 +37,15 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 var _this = this;
-var words = ["začiatočnícky priateľská", "minimálna", "výkonná", "nastaviteľná"];
 var NavIDS = [["InfoBTN", "ReasonBTN", "WikiBTN", "StackBTN"], ["DInfoBTN", "DReasonBTN", "DWikiBTN", "DStackBTN"]];
-var wait = true;
 var logic = 0;
 function delay(time) {
     // @ts-ignore
     return new Promise(function (resolve) { return setTimeout(resolve, time); });
 }
-function fillOut(currentChar) {
-    var _this = this;
-    if (currentChar === void 0) { currentChar = 0; }
-    setTimeout(function () { return __awaiter(_this, void 0, void 0, function () {
-        var ele;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0:
-                    if (!wait) return [3 /*break*/, 2];
-                    return [4 /*yield*/, delay(4000)];
-                case 1:
-                    _a.sent();
-                    wait = false;
-                    _a.label = 2;
-                case 2:
-                    ele = $(".blink-text");
-                    ele.text(ele.text() + words[0][currentChar]);
-                    if (!(currentChar + 1 < words[0].length)) return [3 /*break*/, 3];
-                    return [2 /*return*/, fillOut(currentChar + 1)];
-                case 3: return [4 /*yield*/, delay(2000)];
-                case 4:
-                    _a.sent();
-                    clearOut();
-                    _a.label = 5;
-                case 5: return [2 /*return*/];
-            }
-        });
-    }); }, 225);
-}
-function clearOut(currentChar) {
-    var _this = this;
-    if (currentChar === void 0) { currentChar = 0; }
-    setTimeout(function () { return __awaiter(_this, void 0, void 0, function () {
-        var ele, temp;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0:
-                    ele = $(".blink-text");
-                    ele.text(ele.text().slice(0, words[0].length - currentChar));
-                    if (!(words[0].length - currentChar === 0)) return [3 /*break*/, 2];
-                    temp = words.shift();
-                    words.push(temp);
-                    return [4 /*yield*/, delay(500)];
-                case 1:
-                    _a.sent();
-                    return [2 /*return*/, fillOut()];
-                case 2: return [2 /*return*/, clearOut(currentChar + 1)];
-            }
-        });
-    }); }, 100);
-}
-fillOut();
 function DropMenu() {
     $("#drop").slideToggle();
 }
-// @ts-ignore
-$(window).ready(function () { return __awaiter(_this, void 0, void 0, function () {
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                // @ts-ignore
-                disableScroll();
-                $(".promo-text").css("height", "".concat($("#promo-bg").height(), "px"));
-                $(".cursor").css("height", $("#promo-title").css("font-size"));
-                $(".toTopBtn").click(function () {
-                    toTop();
-                });
-                return [4 /*yield*/, delay(4000)];
-            case 1:
-                _a.sent();
-                // @ts-ignore
-                enableScroll();
-                $(".loading").fadeOut();
-                $("#".concat(NavIDS[0][0])).click(function () {
-                    $([document.documentElement, document.body]).animate({
-                        scrollTop: $("#info").offset().top - 15
-                    }, 2000);
-                });
-                $("#".concat(NavIDS[0][1])).click(function () {
-                    window.location.href = "reason.html";
-                });
-                $("#".concat(NavIDS[1][1])).click(function () {
-                    window.location.href = "reason.html";
-                });
-                $("#".concat(NavIDS[1][0])).click(function () {
-                    $([document.documentElement, document.body]).animate({
-                        scrollTop: $("#info").offset().top - 55
-                    }, 2000);
-                });
-                return [2 /*return*/];
-        }
-    });
-}); });
-$(window).resize(function () {
-    $(".promo-text").css("height", "".concat($("#promo-bg").height(), "px"));
-    $(".cursor").css("height", $("#promo-title").css("font-size"));
-});
 function ConfigMenu() {
     return __awaiter(this, void 0, void 0, function () {
         var configButton;
@@ -171,6 +75,34 @@ function ConfigMenu() {
         });
     });
 }
+// @ts-ignore
+$(window).ready(function () { return __awaiter(_this, void 0, void 0, function () {
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0:
+                // @ts-ignore
+                disableScroll();
+                $(".promo-text").css("height", "".concat($("#promo-bg").height(), "px"));
+                $(".cursor").css("height", $("#promo-title").css("font-size"));
+                $(".toTopBtn").click(function () {
+                    toTop();
+                });
+                return [4 /*yield*/, delay(4000)];
+            case 1:
+                _a.sent();
+                // @ts-ignore
+                enableScroll();
+                $(".loading").fadeOut();
+                $("#".concat(NavIDS[0][0])).click(function () {
+                    window.location.href = "index.html";
+                });
+                $("#".concat(NavIDS[1][0])).click(function () {
+                    window.location.href = "index.html";
+                });
+                return [2 /*return*/];
+        }
+    });
+}); });
 function toTop() {
     $([document.documentElement, document.body]).animate({
         scrollTop: 0

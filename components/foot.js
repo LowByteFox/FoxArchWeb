@@ -5,8 +5,13 @@ class Foot extends React.Component {
         super(props);
     }
 
-    redirect = () => {
-        console.log("%c'Redirecting'", "color: red;font-size: 250%;")
+    redirect = (url=window.location.href.toString()) => {
+        if (url === window.location.href.toString()) {
+            console.log("%c'Not redirecting'", "color: red;font-size: 450%;")
+        } else {
+            console.log("%c'Redirecting to %s'", "color: lime;font-size: 250%;", url)
+            window.location.href = url;
+        }
     }
 
     render() {
@@ -18,13 +23,13 @@ class Foot extends React.Component {
             <div>
                 <h2 style={{margin: "16px"}}>Pozri aj</h2>
                 <div>
-                    <button onClick={this.redirect} title={"Github"}>
+                    <button onClick={() => this.redirect("https://github.com/Panko-Linux")} title={"Github"}>
                         <span className={"fa fa-github"}></span>
                     </button>
-                    <button onClick={this.redirect} title={"SourceForge"}>
+                    <button onClick={() => this.redirect()} title={"SourceForge"}>
                         <span className={"fa fa-folder-open"}></span>
                     </button>
-                    <button onClick={this.redirect} title={"Instagram"}>
+                    <button onClick={() => this.redirect()} title={"Instagram"}>
                         <span className={"fa fa-instagram"}></span>
                     </button>
 

@@ -72,6 +72,14 @@ $(window).ready(async () => {
         }, 2000);
     });
 
+    $(`#${NavIDS[0][1]}`).click(function() {
+        window.location.href = "reason.html"
+    });
+
+    $(`#${NavIDS[1][1]}`).click(function() {
+        window.location.href = "reason.html"
+    });
+
     $(`#${NavIDS[1][0]}`).click(function() {
         $([document.documentElement, document.body]).animate({
             scrollTop: $("#info").offset().top - 55
