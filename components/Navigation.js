@@ -1,59 +1,74 @@
 'use strict';
 
 class Part1 extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+  constructor(props) {
+    super(props);
+  }
 
-    render() {
-        return (
-            <nav className="bg-foxarch shadow-lg">
-                <a onClick={toTop}>
-                    <img src="images/logo.png" alt="logo"/>
-                </a>
-                <div>
-                    <p id={"InfoBTN"} className="hover:bg-foxarch-darker/75 rounded-md">Info</p>
-                    <p id={"ReasonBTN"} className="hover:bg-foxarch-darker/75 rounded-md">Dôvod</p>
-                    <p id={"WikiBTN"} className="hover:bg-foxarch-darker/75 rounded-md">Wiki</p>
-                    <p id={"StackBTN"} className="hover:bg-foxarch-darker/75 rounded-md">Stack</p>
-                </div>
-                <button id="DropdownButton" onClick={DropMenu}>
-                    <span className="fas fa-bars rounded-md hover:bg-foxarch-darker/75"></span>
-                </button>
-            </nav>
-        )
-    }
+  render() {
+    return /*#__PURE__*/React.createElement("nav", {
+      className: "bg-foxarch shadow-lg"
+    }, /*#__PURE__*/React.createElement("a", {
+      onClick: toTop
+    }, /*#__PURE__*/React.createElement("img", {
+      src: "images/logo.png",
+      alt: "logo"
+    })), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("p", {
+      id: "InfoBTN",
+      className: "hover:bg-foxarch-darker/75 rounded-md"
+    }, "Info"), /*#__PURE__*/React.createElement("p", {
+      id: "ReasonBTN",
+      className: "hover:bg-foxarch-darker/75 rounded-md"
+    }, "D\xF4vod"), /*#__PURE__*/React.createElement("p", {
+      id: "WikiBTN",
+      className: "hover:bg-foxarch-darker/75 rounded-md"
+    }, "Wiki"), /*#__PURE__*/React.createElement("p", {
+      id: "StackBTN",
+      className: "hover:bg-foxarch-darker/75 rounded-md"
+    }, "Stack")), /*#__PURE__*/React.createElement("button", {
+      id: "DropdownButton",
+      onClick: DropMenu
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "fas fa-bars rounded-md hover:bg-foxarch-darker/75"
+    })));
+  }
+
 }
 
 class Part2 extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+  constructor(props) {
+    super(props);
+  }
 
-    render() {
-        return (
-            <div id="drop" className="rounded-md border-2 border-foxarch shadow-xl bg-neutral-100" style={{display: "none"}}>
-                <h1>FoxArch</h1>
-                <p id={"DInfoBTN"} className="hover:bg-neutral-200/75 rounded-md">Info</p>
-                <p id={"DReasonBTN"} className="hover:bg-neutral-200/75 rounded-md">Dôvod</p>
-                <p id={"DWikiBTN"} className="hover:bg-neutral-200/75 rounded-md">Wiki</p>
-                <p id={"DStackBTN"} className="hover:bg-neutral-200/75 rounded-md">Stack</p>
-            </div>
-        )
-    }
+  render() {
+    return /*#__PURE__*/React.createElement("div", {
+      id: "drop",
+      className: "rounded-md border-2 border-foxarch shadow-xl bg-neutral-100",
+      style: {
+        display: "none"
+      }
+    }, /*#__PURE__*/React.createElement("h1", null, "FoxArch"), /*#__PURE__*/React.createElement("p", {
+      id: "DInfoBTN",
+      className: "hover:bg-neutral-200/75 rounded-md"
+    }, "Info"), /*#__PURE__*/React.createElement("p", {
+      id: "DReasonBTN",
+      className: "hover:bg-neutral-200/75 rounded-md"
+    }, "D\xF4vod"), /*#__PURE__*/React.createElement("p", {
+      id: "DWikiBTN",
+      className: "hover:bg-neutral-200/75 rounded-md"
+    }, "Wiki"), /*#__PURE__*/React.createElement("p", {
+      id: "DStackBTN",
+      className: "hover:bg-neutral-200/75 rounded-md"
+    }, "Stack"));
+  }
+
 }
 
 function NavFinish() {
-    return (
-        <div>
-            <React.StrictMode>
-            <Part1 />
-            <Part2 />
-            </React.StrictMode>
-        </div>
-    )
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(React.StrictMode, null, /*#__PURE__*/React.createElement(Part1, null), /*#__PURE__*/React.createElement(Part2, null)));
 }
 
 const container = document.getElementById('navigation');
 const root = ReactDOM.createRoot(container);
-root.render(<NavFinish />)
+root.render( /*#__PURE__*/React.createElement(NavFinish, null));
+
