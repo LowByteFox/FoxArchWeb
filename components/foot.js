@@ -1,5 +1,3 @@
-'use strict';
-
 class Foot extends React.Component {
   constructor(props) {
     super(props);
@@ -50,7 +48,7 @@ class Foot extends React.Component {
 
 }
 
-const container = document.getElementById('foot');
-const root = ReactDOM.createRoot(container);
-root.render( /*#__PURE__*/React.createElement(Foot, null));
+const FootContainer = document.getElementById('foot');
+const FootRoot = ReactDOM.createRoot(FootContainer);
+FootRoot.render( /*#__PURE__*/React.createElement(Foot, null));
 

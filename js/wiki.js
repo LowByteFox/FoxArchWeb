@@ -37,7 +37,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 var _this = this;
-var NavIDS = [["InfoBTN", "ReasonBTN", "WikiBTN", "StackBTN"], ["DInfoBTN", "DReasonBTN", "DWikiBTN", "DStackBTN"]];
+var NavIDS = [["InfoBTN", "WikiBTN", "StackBTN"], ["DInfoBTN", "DWikiBTN", "DStackBTN"]];
 var logic = 0;
 function delay(time) {
     // @ts-ignore
@@ -80,8 +80,6 @@ $(window).ready(function () { return __awaiter(_this, void 0, void 0, function (
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
-                // @ts-ignore
-                disableScroll();
                 $(".promo-text").css("height", "".concat($("#promo-bg").height(), "px"));
                 $(".cursor").css("height", $("#promo-title").css("font-size"));
                 $(".toTopBtn").click(function () {
@@ -90,14 +88,18 @@ $(window).ready(function () { return __awaiter(_this, void 0, void 0, function (
                 return [4 /*yield*/, delay(4000)];
             case 1:
                 _a.sent();
-                // @ts-ignore
-                enableScroll();
                 $(".loading").fadeOut();
                 $("#".concat(NavIDS[0][0])).click(function () {
                     window.location.href = "index.html";
                 });
                 $("#".concat(NavIDS[1][0])).click(function () {
                     window.location.href = "index.html";
+                });
+                $("#".concat(NavIDS[0][2])).click(function () {
+                    window.location.href = "stack.html";
+                });
+                $("#".concat(NavIDS[1][2])).click(function () {
+                    window.location.href = "stack.html";
                 });
                 return [2 /*return*/];
         }

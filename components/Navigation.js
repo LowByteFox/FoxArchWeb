@@ -1,5 +1,11 @@
 'use strict';
 
+function toTop() {
+  $([document.documentElement, document.body]).animate({
+    scrollTop: 0
+  }, 2000);
+}
+
 class Part1 extends React.Component {
   constructor(props) {
     super(props);
@@ -17,9 +23,6 @@ class Part1 extends React.Component {
       id: "InfoBTN",
       className: "hover:bg-foxarch-darker/75 rounded-md"
     }, "Info"), /*#__PURE__*/React.createElement("p", {
-      id: "ReasonBTN",
-      className: "hover:bg-foxarch-darker/75 rounded-md"
-    }, "D\xF4vod"), /*#__PURE__*/React.createElement("p", {
       id: "WikiBTN",
       className: "hover:bg-foxarch-darker/75 rounded-md"
     }, "Wiki"), /*#__PURE__*/React.createElement("p", {
@@ -51,9 +54,6 @@ class Part2 extends React.Component {
       id: "DInfoBTN",
       className: "hover:bg-neutral-200/75 rounded-md"
     }, "Info"), /*#__PURE__*/React.createElement("p", {
-      id: "DReasonBTN",
-      className: "hover:bg-neutral-200/75 rounded-md"
-    }, "D\xF4vod"), /*#__PURE__*/React.createElement("p", {
       id: "DWikiBTN",
       className: "hover:bg-neutral-200/75 rounded-md"
     }, "Wiki"), /*#__PURE__*/React.createElement("p", {
@@ -68,7 +68,7 @@ function NavFinish() {
   return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(React.StrictMode, null, /*#__PURE__*/React.createElement(Part1, null), /*#__PURE__*/React.createElement(Part2, null)));
 }
 
-const container = document.getElementById('navigation');
-const root = ReactDOM.createRoot(container);
-root.render( /*#__PURE__*/React.createElement(NavFinish, null));
+const NavigationContainer = document.getElementById('navigation');
+const NavigationRoot = ReactDOM.createRoot(NavigationContainer);
+NavigationRoot.render( /*#__PURE__*/React.createElement(NavFinish, null));
 

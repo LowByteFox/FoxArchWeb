@@ -1,7 +1,7 @@
 /// <reference path="jquery/index.d.ts" />
 /// <reference path="jqueryui/index.d.ts" />
 
-const NavIDS = [["InfoBTN", "ReasonBTN", "WikiBTN", "StackBTN"], ["DInfoBTN", "DReasonBTN", "DWikiBTN", "DStackBTN"]]
+const NavIDS = [["InfoBTN", "WikiBTN", "StackBTN"], ["DInfoBTN", "DWikiBTN", "DStackBTN"]]
 let logic = 0;
 
 function delay(time) {
@@ -35,16 +35,12 @@ async function ConfigMenu() {
 // @ts-ignore
 $(window).ready(async () => {
 
-    // @ts-ignore
-    disableScroll();
     $(".promo-text").css("height", `${$("#promo-bg").height()}px`)
     $(".cursor").css("height", $("#promo-title").css("font-size"));
     $(".toTopBtn").click(() => {
         toTop()
     })
     await delay(4000);
-    // @ts-ignore
-    enableScroll();
     $(".loading").fadeOut()
 
     $(`#${NavIDS[0][0]}`).click(function() {
@@ -53,6 +49,14 @@ $(window).ready(async () => {
 
     $(`#${NavIDS[1][0]}`).click(function() {
         window.location.href = "index.html"
+    });
+
+    $(`#${NavIDS[0][2]}`).click(function() {
+        window.location.href = "stack.html"
+    });
+
+    $(`#${NavIDS[1][2]}`).click(function() {
+        window.location.href = "stack.html"
     });
 })
 

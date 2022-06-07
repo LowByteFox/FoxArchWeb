@@ -1,6 +1,8 @@
 @import url("https://use.typekit.net/kac0vmf.css");
+@import url('https://fonts.googleapis.com/css2?family=Stint+Ultra+Condensed&display=swap');
+
 * {
-  font-family: lato, sans-serif;
+  font-family: 'lato', sans-serif;
 }
 
 html {
@@ -191,7 +193,7 @@ nav {
 
 .loading {
   background-color: #262624;
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100vh;
   z-index: 100;
@@ -253,4 +255,26 @@ nav {
   border-radius: 5px;
   margin: 77px 15px 15px;
   padding: 15px;
+}
+
+.construction-text {
+  color: white;
+  font-family: 'Stint Ultra Condensed', cursive;
+  position: absolute;
+  top: 45%;
+  width: 100%;
+  font-size: 500%;
+  text-align: center;
+}
+
+.construction-bg {
+  height: 100vh;
+  object-fit: cover;
+}
+
+.omori {
+  position: fixed;
+  bottom: 0;
+  z-index: 1000;
+  display: none;
 }

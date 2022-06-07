@@ -80,6 +80,6 @@ function Carousel1() {
     )
 }
 
-const container = document.getElementById('carousel1');
-const root = ReactDOM.createRoot(container);
-root.render(<Carousel1 />)
+const CarouselContainer = document.getElementById('carousel1');
+const CarouselRoot = ReactDOM.createRoot(CarouselContainer);
+CarouselRoot.render(<Carousel1 />)

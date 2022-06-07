@@ -13,7 +13,6 @@ class Part1 extends React.Component {
                 </a>
                 <div>
                     <p id={"InfoBTN"} className="hover:bg-foxarch-darker/75 rounded-md">Info</p>
-                    <p id={"ReasonBTN"} className="hover:bg-foxarch-darker/75 rounded-md">Dôvod</p>
                     <p id={"WikiBTN"} className="hover:bg-foxarch-darker/75 rounded-md">Wiki</p>
                     <p id={"StackBTN"} className="hover:bg-foxarch-darker/75 rounded-md">Stack</p>
                 </div>
@@ -35,7 +34,6 @@ class Part2 extends React.Component {
             <div id="drop" className="rounded-md border-2 border-foxarch shadow-xl bg-neutral-100" style={{display: "none"}}>
                 <h1>FoxArch</h1>
                 <p id={"DInfoBTN"} className="hover:bg-neutral-200/75 rounded-md">Info</p>
-                <p id={"DReasonBTN"} className="hover:bg-neutral-200/75 rounded-md">Dôvod</p>
                 <p id={"DWikiBTN"} className="hover:bg-neutral-200/75 rounded-md">Wiki</p>
                 <p id={"DStackBTN"} className="hover:bg-neutral-200/75 rounded-md">Stack</p>
             </div>
@@ -54,6 +52,6 @@ function NavFinish() {
     )
 }
 
-const container = document.getElementById('navigation');
-const root = ReactDOM.createRoot(container);
-root.render(<NavFinish />)
+const NavigationContainer = document.getElementById('navigation');
+const NavigationRoot = ReactDOM.createRoot(NavigationContainer);
+NavigationRoot.render(<NavFinish />)

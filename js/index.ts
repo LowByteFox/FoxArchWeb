@@ -2,7 +2,7 @@
 /// <reference path="jqueryui/index.d.ts" />
 
 const words = ["začiatočnícky priateľská", "minimálna", "výkonná", "nastaviteľná"]
-const NavIDS = [["InfoBTN", "ReasonBTN", "WikiBTN", "StackBTN"], ["DInfoBTN", "DReasonBTN", "DWikiBTN", "DStackBTN"]]
+const NavIDS = [["InfoBTN", "WikiBTN", "StackBTN"], ["DInfoBTN", "DWikiBTN", "DStackBTN"]]
 
 let wait = true;
 let logic = 0;
@@ -54,16 +54,15 @@ function DropMenu() {
 // @ts-ignore
 $(window).ready(async () => {
 
-    // @ts-ignore
-    disableScroll();
     $(".promo-text").css("height", `${$("#promo-bg").height()}px`)
     $(".cursor").css("height", $("#promo-title").css("font-size"));
     $(".toTopBtn").click(() => {
         toTop()
     })
+    $(".omori").click(() => {
+        window.location.href = "https://store.steampowered.com/app/1150690/OMORI/"
+    })
     await delay(4000);
-    // @ts-ignore
-    enableScroll();
     $(".loading").fadeOut()
 
     $(`#${NavIDS[0][0]}`).click(function() {
@@ -73,11 +72,11 @@ $(window).ready(async () => {
     });
 
     $(`#${NavIDS[0][1]}`).click(function() {
-        window.location.href = "reason.html"
+        window.location.href = "wiki.html"
     });
 
     $(`#${NavIDS[1][1]}`).click(function() {
-        window.location.href = "reason.html"
+        window.location.href = "wiki.html"
     });
 
     $(`#${NavIDS[1][0]}`).click(function() {
@@ -85,12 +84,31 @@ $(window).ready(async () => {
             scrollTop: $("#info").offset().top - 55
         }, 2000);
     });
+
+    $(`#${NavIDS[0][2]}`).click(function() {
+        window.location.href = "stack.html"
+    });
+
+    $(`#${NavIDS[1][2]}`).click(function() {
+        window.location.href = "stack.html"
+    });
 })
 
 $(window).resize(function() {
     $(".promo-text").css("height", `${$("#promo-bg").height()}px`)
     $(".cursor").css("height", $("#promo-title").css("font-size"));
+})
 
+$(window).mousemove((event) => {
+    if (event.pageY >= $(document.body).height()-10 && event.pageX <= 10) {
+        $(".omori").show('slide', {direction: 'down', duration: 1000})
+    } else {
+        $(".omori").hide('slide', {direction: 'down'})
+    }
+})
+
+$(window).scroll(() => {
+    $(".omori").hide('slide', {direction: 'down'})
 })
 
 async function ConfigMenu() {
